@@ -8,7 +8,7 @@ O objetivo da utilização do Companion é o registro de acessos na plataforma P
 Iremos disponibilizar um script do nosso serviço para que o registro de acessos seja contabilizado no parceirospromo. Junto com o script, também será disponibilizado a hash da plataforma, para que os acessos sejam registrados para aquela plataforma em específico.
 
 ## Servidores:
-O serviço possui dois servidores de forma a tornar possível a integração de testagem do registro de acessos. Os servidor são:
+O serviço possui dois servidores de forma a tornar possível a integração de testagem do registro de acessos. Os servidores são:
 
 - **Homologação:** https://cmp-dev.pcr.rec.br/
 - **Produção:** https://cmp.pcr.rec.br/
