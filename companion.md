@@ -43,10 +43,10 @@ Para o devido funcionamento do registro de acessos, o script acima deve ser inse
 ### 1 - Formato da URL:
 O formato da URL para que o Companion registre os acesos é o seguinte:
 
-`https:/<ecommerce>/?utm_medium=<utm_medium>&pcrid=<código numérico do nosso afiliado>&utm_source=<utm_source>&pcrtt=<múltiplas tags separadas por vírgula>`
+[https:/ecommerce.com/?utm_medium=utm_medium&pcrid=código-numérico-do-nosso-afiliado&utm_source=utm_source&pcrtt=múltiplas-tags,separadas-por-vírgula](https:/ecommerce.com/?utm_medium=utm_medium&pcrid=código-numérico-do-nosso-afiliado&utm_source=utm_source&pcrtt=múltiplas-tags,separadas-por-vírgula)
 
 Exemplo:
-`https:/parceirospromo.com.br/?utm_medium=afiliado&pcrid=2554&utm_source=site-blog&pcrtt=tag-teste,outra-tag`
+[https:/parceirospromo.com.br/?utm_medium=afiliado&pcrid=2554&utm_source=site-blog&pcrtt=tag-teste,outra-tag](https:/parceirospromo.com.br/?utm_medium=afiliado&pcrid=2554&utm_source=site-blog&pcrtt=tag-teste,outra-tag)
 
 ### 2 - Cookies:
 O Companion NÃO gera qualquer tipo de cookie durante seu funcionamento.
