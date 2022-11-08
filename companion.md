@@ -3,6 +3,8 @@
 ## Resumo:
 O Companion é um microsserviço para registro de acessos em um determinado cliente.
 
+O objetivo da utilização do Companion é o registro de acessos na plataforma ParceirosPromo para que nossos afiliados possam acompanhar em tempo real os links de divulgação que estão sendo bem sucedidos em divulgar nossas marcas parceiras e, desta forma, planejar e implementar campanhas que potencializem a própria divulgação para que estes acessos se convertam em vendas.
+
 Iremos disponibilizar um script do nosso serviço para que o registro de acessos seja contabilizado no parceirospromo. Junto com o script, também será disponibilizado a hash da plataforma, para que os acessos sejam registrados para aquela plataforma em específico.
 
 ## Servidores:
@@ -40,13 +42,17 @@ Para o devido funcionamento do registro de acessos, o script acima deve ser inse
 
 ## Observações:
 
-### 1 - Formato da URL:
+### 1 - Formato da URL e leitura de parâmetros:
 O formato da URL para que o Companion registre os acesos é o seguinte:
 
 [https://ecommerce.com/?utm_medium=utm_medium&pcrid=código-numérico-do-nosso-afiliado&utm_source=utm_source&pcrtt=múltiplas-tags,separadas-por-vírgula](https://ecommerce.com/?utm_medium=utm_medium&pcrid=código-numérico-do-nosso-afiliado&utm_source=utm_source&pcrtt=múltiplas-tags,separadas-por-vírgula)
 
 Exemplo:
 [https://parceirospromo.com.br/?utm_medium=afiliado&pcrid=2554&utm_source=site-blog&pcrtt=tag-teste,outra-tag](https://parceirospromo.com.br/?utm_medium=afiliado&pcrid=2554&utm_source=site-blog&pcrtt=tag-teste,outra-tag)
+
+Estes parâmetros são importantes, pois é através deles que o Companion faz a leitura de que afiliado está divulgado a marca. O funcionamento do Companion se baseia em ler estes parâmetros para, então, registrar os acessos.
+
+Se houver algum redirecionamento no servidor, é fundamental que este mantenha os parâmetros da URL ou o Companion não conseguirá registrar os acessos adequadamente, fazendo o afiliado ter uma estatística de acessos inconsiste na plataforma ParceirosPromo.
 
 ### 2 - Cookies:
 O Companion NÃO gera qualquer tipo de cookie durante seu funcionamento.
