@@ -291,7 +291,7 @@ A requisição acima retornaria a quantidade de vendas criadas entre o dia 01/10
 
 Rota responsável por receber novos pedidos do fornecedor. Todos os pedidos registrados no fornecedor que possua um "pcrid" (ID de afiliado do ParceirosPromo) devem ser enviados por esta rota para que a comissão do afiliado possa ser paga e ele continue divulgando a marca do fornecedor.
 
-#### Parâmetros que devem ser enviados para a API:
+#### Parâmetros que devem ser enviados através a API:
 
 - **id (string):** ID da venda;
 - **pcrid (int):** Id do afiliado;
@@ -348,7 +348,7 @@ Em caso de sucesso (HTTP status 200):
 }
 ```
 
-Para caso houver algum erro (HTTP status 500):
+Para caso houver algum erro (HTTP status 400 ou 500):
 
 ```json
 {
@@ -356,7 +356,53 @@ Para caso houver algum erro (HTTP status 500):
 }
 ```
 
-<!-- ### [<span style="color:#d97c11 ">PUT</span>] -->
+### [<span style="color:#d97c11 ">PUT</span>] Update Purchases: `/purchases/`
 
-<!-- ## Observações: -->
+Rota responsável pela atualizar o status de pedidos. É a rota que deve ser usada para caso algum pedido enviado para a plataforma ParceirosPromo tenha sido aprovado ou cancelado. Um caso de uso muito comum é o envio de pedidos realizados com boleto bancário como método de pagamento serem enviados com o status pendente (0) para nossa plataforma e ter seus status atualizados para aprovado (1) ou reprovado (2) conforme o pagamento ou a expiração.
 
+#### Parâmetros que devem ser enviados através da API:
+
+- **id (string):** ID da venda;
+- **status (int):** Status do pedido representado por:
+  - 0 - Pendente;
+  - 1 - Aprovado;
+  - 2 - Reprovado.
+
+#### Exemplo de requisição:
+
+A requisição do método PUT deve ser feita para https://www.parceirospromo.com.br/api/purchases/ no formato JSON.
+
+Ex.:
+
+```json
+[
+    {
+        "id": "ABC123",
+        "status": 1  // Altera o status do pedido "ABC123" para aprovado
+    },
+    {
+        "id": "9D8E8F7",
+        "status": 2  // Altera o status do pedido "9D8EF7" para cancelado
+    }
+]
+```
+
+Múltiplos pedidos podem ser atualizados em uma única requisição.
+
+#### Retorno da API:
+
+Em caso de sucesso (HTTP status 200)
+
+```json
+{
+    "msg": "Registro(s) atualizado(s) com sucesso"
+}
+```
+
+Para caso houver algum erro (HTTP status 400 ou 500):
+
+```json
+{
+    "err": "<Mensagem de erro informando o que ocorreu>"
+}
+```
