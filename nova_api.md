@@ -156,7 +156,7 @@ Um exemplo dos retornos da API para esta consulta:
 }
 ```
 
-### [<span style="color: #1966a8">GET</span>] Get Accesses: `/accesses/count`
+### [<span style="color: #1966a8">GET</span>] Get Accesses Count: `/accesses/count`
 
 Rota responsável por exibir a quantidade total de acessos de um fornecedor na plataforma. São parâmetros obrigatórios `begin` e `end` que representam respectivamente, a data de início e a data de fim da busca.
 
@@ -184,5 +184,113 @@ A requisição acima retornaria a quantidade de acessos criados entre o dia 01/1
 }
 ```
 
-## Observações:
+### [<span style="color: #1966a8">GET</span>] Get Purchases: `/purchases`
+
+Rota responsável por exibir os registros de vendas de um fornecedor na plataforma. São parâmetros obrigatórios `begin` e `end` que representam respectivamente, a data de início e a data de fim da busca.
+
+#### Exemplo de requisição:
+
+A URL da requisição deve seguir o seguinte formato:
+
+https://www.parceirospromo.com.br/api/purchases?begin=data_inicial&end=data_final&page=página
+
+Um exemplo de requisição para o servidor de produção:
+
+https://www.parceirospromo.com.br/api/purchases?begin=2022-10-01&end=2022-10-04&page=5
+
+A requisição acima retornaria os registros de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59.
+
+#### Dados retornados pela API:
+
+- **id (string):** ID da venda;
+- **pcrid (int):** Id do afiliado;
+- **status (int):** Status do pedido representado por:
+  - 0 - Pendente;
+  - 1 - Aprovado;
+  - 2 - Reprovado.
+- **purchase_date (string):** Data da realização da venda no sistema do fornecedor;
+- **price (float):** Valor total do produto;
+- **payment_commission_date (string):** Data de referência para o pagamento de comissão. Tem como finalidade definir que a comissão só deve ser paga após a data do check-in, por exemplo, para evitar que um afiliado receba comissão de produtos que virão a ser cancelados;
+- **commission_base (float):** Valor base para que a comissão seja calculada. Este valor é específico para cada fornecedor. Alguns possui o commission_base de 100%, ou seja, o mesmo valor do price, enquanto outro possuem bases de comissões menores como 90% ou 80% do valor total;
+- **commission_value (float):** Valor da comissão gerada;
+- **contact_name (string):** Nome do cliente;
+- **tags ([]string):** Tags inseridas pelo afiliado durante a divulgação do link para monitoramento da conversão;
+- **extra (dict):** Campo livre para que o fornecedor possa colocar dados essenciais para seu negócio que não são abrangidos pelos campos anteriores. Ex.: nome do produto, moeda de câmbio, valor do câmbio, etc.;
+- **created_at (string):** Data de criação do registro no ParceirosPromo.
+
+#### Retorno da API:
+
+Um exemplo dos retornos da API para esta consulta:
+
+```json
+{
+	"current_page": 5,
+	"total_pages": 10,
+	"has_previous": true,
+	"has_next": true,
+	"total_items": 150,
+	"data": [
+		{
+			"id": "987654",
+			"pcrid": 2554,
+			"status": 1,
+			"purchase_date": "2022-10-31T00:00:00Z",
+			"price": 100.00,
+			"payment_commission_date": "2022-12-01T00:00:00Z",
+			"commission_base": 90.00,  // A base de comissão é 90% do valor total para este exemplo
+			"commission_value": 9.00,  // Exemplo de comissão de 10%
+			"contact_name": "Math******es",
+			"tags": [
+				"tag-teste",
+                "outra-tag"
+			],
+			"extra": {
+                "check_in": "2022-11-29",
+                "check_out": "2022-11-30",
+                "currency": "USD",
+                "exchange_rate": 5.00,
+                "exchange_value": 20.00,
+                "hotel": "Hotel Hello World"
+			},
+			"created_at": "2022-10-31T00:01:25.437499-03:00"
+		},
+		...
+	]
+}
+```
+
+### [<span style="color: #1966a8">GET</span>] Get Purchases Count: `/purchases/count`
+
+Rota responsável por exibir a quantidade total de vendas de um fornecedor na plataforma. São parâmetros obrigatórios `begin` e `end` que representam respectivamente, a data de início e a data de fim da busca.
+
+#### Exemplo de requisição:
+
+A URL da requisição deve seguir o seguinte formato:
+
+https://www.parceirospromo.com.br/api/purchases/count?begin=data_inicial&end=data_final
+
+Um exemplo de requisição para o servidor de produção:
+
+https://www.parceirospromo.com.br/api/purchases/count?begin=2022-10-01&end=2022-10-04
+
+A requisição acima retornaria a quantidade de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59.
+
+#### Dados retornados pela API:
+
+- **purchases_count (int):** Quantidade total de vendas naquele período.
+
+#### Retorno da API:
+
+```json
+{
+	"purchases_count": 150
+}
+```
+
+
+<!-- ### [<span style="color: #1db847">POST</span>]
+
+### [<span style="color:#d97c11 ">PUT</span>]
+
+## Observações: -->
 
