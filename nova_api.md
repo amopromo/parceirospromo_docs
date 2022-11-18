@@ -192,13 +192,13 @@ Rota responsável por exibir os registros de vendas de um fornecedor na platafor
 
 A URL da requisição deve seguir o seguinte formato:
 
-https://www.parceirospromo.com.br/api/purchases?begin=data_inicial&end=data_final&page=página
+https://www.parceirospromo.com.br/api/purchases?begin=data_inicial&end=data_final&status=codigo_do_status&page=página
 
 Um exemplo de requisição para o servidor de produção:
 
-https://www.parceirospromo.com.br/api/purchases?begin=2022-10-01&end=2022-10-04&page=5
+https://www.parceirospromo.com.br/api/purchases?begin=2022-10-01&end=2022-10-04&status=1&page=5
 
-A requisição acima retornaria os registros de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59.
+A requisição acima retornaria os registros de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59 com status aprovado (1).
 
 #### Dados retornados pela API:
 
@@ -267,13 +267,13 @@ Rota responsável por exibir a quantidade total de vendas de um fornecedor na pl
 
 A URL da requisição deve seguir o seguinte formato:
 
-https://www.parceirospromo.com.br/api/purchases/count?begin=data_inicial&end=data_final
+https://www.parceirospromo.com.br/api/purchases/count?begin=data_inicial&end=data_final&status=codigo_do_status
 
 Um exemplo de requisição para o servidor de produção:
 
-https://www.parceirospromo.com.br/api/purchases/count?begin=2022-10-01&end=2022-10-04
+https://www.parceirospromo.com.br/api/purchases/count?begin=2022-10-01&end=2022-10-04&status=0
 
-A requisição acima retornaria a quantidade de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59.
+A requisição acima retornaria a quantidade de vendas criadas entre o dia 01/10/2022 às 00:00 e 04/10/2022 às 23:59 com status pendente (0).
 
 #### Dados retornados pela API:
 
