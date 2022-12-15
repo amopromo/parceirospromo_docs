@@ -55,4 +55,11 @@ Estes parâmetros são importantes, pois é através deles que o Companion faz a
 Se houver algum redirecionamento no servidor, é fundamental que este mantenha os parâmetros da URL ou o Companion não conseguirá registrar os acessos adequadamente, fazendo o afiliado ter uma estatística de acessos inconsiste na plataforma ParceirosPromo.
 
 ### 2 - Cookies:
-O Companion NÃO gera qualquer tipo de cookie durante seu funcionamento.
+O Companion gera quatro cookies durante seu funcionamento, todos obtidos na URL de divulgação do parceiro:
+
+- **pcrid:** ID do parceiro;
+- **pcrtt:** Tags de divulgação;
+- **utm_medium:** Mídia de publicidade;
+- **utm_source:** Fonte da publicidade.
+
+Todos os cookies expiram em 30 dias.
