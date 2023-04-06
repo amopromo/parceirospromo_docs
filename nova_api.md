@@ -209,6 +209,7 @@ A requisição acima retornaria os registros de vendas criadas entre o dia 01/10
   - 1 - Aprovado;
   - 2 - Reprovado.
 - **purchase_date (string):** Data da realização da venda no sistema do fornecedor;
+- **purchase_time (string):** Horário da realização da venda no sistema do fornecedor, campo opcional;
 - **price (float):** Valor total do produto;
 - **payment_commission_date (string):** Data de referência para o pagamento de comissão. Tem como finalidade definir que a comissão só deve ser paga após a data do check-in, por exemplo, para evitar que um afiliado receba comissão de produtos que virão a ser cancelados;
 - **commission_base (float):** Valor base para que a comissão seja calculada. Este valor é específico para cada fornecedor. Alguns possuem o commission_base de 100%, ou seja, o mesmo valor do price, enquanto outros possuem bases de comissões menores como 90% ou 80% do valor total;
