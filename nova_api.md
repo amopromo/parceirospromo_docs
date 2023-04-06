@@ -236,6 +236,7 @@ Um exemplo dos retornos da API para esta consulta:
             "pcrid": 2554,
             "status": 1,
             "purchase_date": "2022-10-31T00:00:00Z",
+            "purchase_time": "00:00:00",
             "price": 100.00,
             "payment_commission_date": "2022-12-01T00:00:00Z",
             "commission_base": 90.00,  // A base de comissão é 90% do valor total para este exemplo
