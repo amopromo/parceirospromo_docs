@@ -10,8 +10,8 @@ Iremos disponibilizar um script do nosso serviço para que o registro de acessos
 ## Servidores:
 O serviço possui dois servidores de forma a tornar possível a integração de testagem do registro de acessos. Os servidores são:
 
-- **Homologação:** https://cmp-dev.pcr.rec.br/
-- **Produção:** https://cmp.pcr.rec.br/
+- **Homologação:** https://cmp-dev.pcr.rec.br/cmp
+- **Produção:** https://cmp.pcr.rec.br/cmp
 
 ## Instalação e execução:
 A instalação do Companion se dá pela inserção do script disponibilizado com a hash única (uuid) para o e-commerce a ser integrado.
