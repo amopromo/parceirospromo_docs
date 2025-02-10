@@ -12,7 +12,7 @@ Para ter acesso à API o fornecedor necessita apenas utilizar sua chave única n
 ## Servidores:
 O serviço possui dois servidores de forma a tornar possível a integração de testagem de suas funcionalidades. Os servidores são:
 
-- **Homologação:** https://hom.parceirospromo.com.br/api
+- **Homologação:** https://dev.k8s.parceirospromo.com.br/api
 - **Produção:** https://www.parceirospromo.com.br/api
 
 ## Headers e Autenticação:
