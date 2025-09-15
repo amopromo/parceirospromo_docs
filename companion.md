@@ -10,7 +10,7 @@ Iremos disponibilizar um script do nosso serviço para que o registro de acessos
 ## Servidores:
 O serviço possui dois servidores de forma a tornar possível a integração de testagem do registro de acessos. Os servidores são:
 
-- **Homologação:** https://cmp-dev.pcr.rec.br/cmp
+- **Homologação:** https://dev.companion.parceirospromo.com.br/cmp
 - **Produção:** https://cmp.pcr.rec.br/cmp
 
 ## Instalação e execução:
