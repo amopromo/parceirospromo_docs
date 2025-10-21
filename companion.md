@@ -11,7 +11,7 @@ Iremos disponibilizar um script do nosso serviço para que o registro de acessos
 O serviço possui dois servidores de forma a tornar possível a integração de testagem do registro de acessos. Os servidores são:
 
 - **Homologação:** https://dev.companion.parceirospromo.com.br/cmp
-- **Produção:** https://cmp.pcr.rec.br/cmp
+- **Produção:** https://companion.parceirospromo.com.br/cmp
 
 ## Instalação e execução:
 A instalação do Companion se dá pela inserção do script disponibilizado com a hash única (uuid) para o e-commerce a ser integrado.
@@ -31,7 +31,7 @@ Um exemplo de script pronto para ser usado em produção:
 
 ```javascript
 (function(c,o,m,r,a,d,e){
-r=o.createElement('script');r.async=1;r.src='https://cmp.pcr.rec.br/cmp'+c.location.search;  // Servidor de produção
+r=o.createElement('script');r.async=1;r.src='https://companion.parceirospromo.com.br/cmp'+c.location.search;  // Servidor de produção
 r.id="cmp";a=o.getElementsByTagName('script')[0];a.parentNode.insertBefore(r,a);
 d=o.createElement('input');d.type='hidden';d.id='eh';d.value=m;
 e=o.getElementsByTagName('body')[0];e.appendChild(d);
