@@ -40,6 +40,8 @@ e=o.getElementsByTagName('body')[0];e.appendChild(d);
 
 Para o devido funcionamento do registro de acessos, o script acima deve ser inserido na página de entrada do e-commerce parceiro, na maioria dos casos em uma landing page. Com o script nesta página, o registro de acessos já estará implementado e os dados já estarão sendo salvos em nossa base.
 
+**OBS: Adicionar o script no body do html.**
+
 ## Observações:
 
 ### 1 - Formato da URL e leitura de parâmetros:
